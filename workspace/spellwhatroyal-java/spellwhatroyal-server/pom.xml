@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>spellwhatroyal-server</artifactId>
+	<packaging>jar</packaging>
+	<properties>
+		<!-- MicroProfile implementation => MicroProfile 2.1 -->
+		<kumuluzee.version>3.6.0</kumuluzee.version>
+		<sl4j.version>1.7.25</sl4j.version>
+		<!-- MicroProfile Config -->
+		<microprofile-config.version>1.3.0</microprofile-config.version>
+	</properties>
+	<parent>
+		<groupId>fr.mickaelbaron</groupId>
+		<artifactId>spellwhatroyal</artifactId>
+		<version>0.1-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>fr.mickaelbaron</groupId>
+			<artifactId>spellwhatroyal-api</artifactId>
+			<version>${spellwhatroyal.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.kumuluz.ee</groupId>
+			<artifactId>kumuluzee-microProfile-3.0</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.kumuluz.ee</groupId>
+			<artifactId>kumuluzee-websocket-jetty</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.kumuluz.ee.config</groupId>
+			<artifactId>kumuluzee-config-mp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${sl4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${sl4j.version}</version>
+		</dependency>
+
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.kumuluz.ee</groupId>
+				<artifactId>kumuluzee-bom</artifactId>
+				<version>${kumuluzee.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.kumuluz.ee.config</groupId>
+				<artifactId>kumuluzee-config-mp</artifactId>
+				<version>${microprofile-config.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
