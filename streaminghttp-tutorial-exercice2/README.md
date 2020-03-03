@@ -24,14 +24,15 @@ Nous allons démarrer le serveur pour tester la future communication.
 
 * Exécuter le projet serveur _spellwhatroyal-server_ à partir d'une nouvelle configuration d'exécution **Java Application** depuis Eclipse (**Run -> Run Configurations... -> New Launch Configuration**). Choisir le projet _spellwhatroyal-server_ et saisir comme classe principale `com.kumuluz.ee.EeApplication`.
 
-* Ouvrir un terminal et exécuter la commande suivante en utilisant **cURL** pour rejoindre une partie de « Spell What Royal » et identifier le joueur _Capitaine Flam_ sur le serveur.
+* Ouvrir un terminal et exécuter la commande suivante en utilisant **cURL** pour rejoindre une partie de « Spell What Royal » et identifier le joueur _J1_ sur le serveur.
 
 ```console
-$ curl -H "Content-Type: application/json" -X POST -d '{"username":"Capitaine Flam"}' http://localhost:8080/authentication
+$ curl -H "Content-Type: application/json" -X POST -d '{"username":"J1"}' http://localhost:8080/authentication
+
 {"token":"1"}
 ```
 
-Comme vous pouvez le constater, l'appel au service web REST retourne un token qui sera utilisé pour identifier le joueur _Capitaine Flam_ pendant une partie. Il vous est proposé de réaliser la même opération en utilisant l'API cliente JAX-RS. Pour rappel, voici comment utiliser cette API client d'invocation à un service web.
+Comme vous pouvez le constater, l'appel au service web REST retourne un token qui sera utilisé pour identifier le joueur _J1_ pendant une partie. Il vous est proposé de réaliser la même opération en utilisant l'API cliente JAX-RS. Pour rappel, voici comment utiliser cette API client d'invocation à un service web.
 
 ```Java
 // Création du client.
@@ -69,7 +70,8 @@ Response response = =ClientBuilder.newClient().target("http://127.0.0.1:9992").p
   * invoquer le service web ;
   * si le statut de la réponse est 200 :
     * extraire un object `CredentialsResult` depuis la réponse ;
-    * mettre à jour le modèle du jeu avec le nom et le token obtenu.
+    * mettre à jour le modèle du jeu avec le nom et le token obtenu ;
+    * invoquer la méthode `SpellWhatRoyalController#start()`.
   * sinon :
     * afficher un message d'erreur sur la console.
 
