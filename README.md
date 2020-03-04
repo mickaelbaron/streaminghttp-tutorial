@@ -60,9 +60,9 @@ Nous montrons ci-dessous, les différentes interfaces graphiques auxquelles le j
 
 ![Interface graphique du résultat d'une manche et des scores de tous les joueurs](./images/04-debriefing.png "Interface graphique du résultat d'une manche et des scores de tous les joueurs")
 
-## Ressources et remerciements
+## Ressources
 
-Retrouver les précédentes leçons :
+Retrouver les autres tutoriels :
 
 * [Tutoriel sur SOAP-UI pour inspecter et invoquer un service web étendus/SOAP via l’outil SOAP-UI](https://github.com/mickaelbaron/soapui-tutorial) ;
 * [Tutoriel sur JAX-WS pour implémenter des services web étendus/SOAP](https://github.com/mickaelbaron/jaxws-tutorial) ;
@@ -71,8 +71,13 @@ Retrouver les précédentes leçons :
 
 Pour aller plus loin, vous pouvez consulter les ressources suivantes :
 
-* [Support de cours REST](https://mickael-baron.fr/soa/comprendre-style-architecture-rest) ;
-* [Support de cours JAX-RS](https://mickael-baron.fr/soa/developper-serviceweb-rest-jaxrs) ;
-* [Support de cours sur une introduction aux architectures microservices](https://mickael-baron.fr/soa/introduction-microservices) ;
+* [Support de cours SOA](https://mickael-baron.fr/soa/introduction-soa "Support de cours SOA") ;
+* [Support de cours WSDL](https://mickael-baron.fr/soa/decrire-configurer-wsdl "Support de cours WSDL") ;
+* [Support de cours SOAP](https://mickael-baron.fr/soa/communiquer-soap "Support de cours SOAP") ;
+* [Support de cours JAX-WS](https://mickael-baron.fr/soa/developper-serviceweb-jaxws "Support de cours JAX-WS").
+* [Support de cours REST](https://mickael-baron.fr/soa/comprendre-style-architecture-rest "Support de cours REST") ;
+* [Support de cours JAX-RS](https://mickael-baron.fr/soa/developper-serviceweb-rest-jaxrs "Support de cours JAX-RS") ;
 * [Support de cours sur le Streaming HTTP](https://mickael-baron.fr/soa/introduction-streaminghttp) ;
-* [Support de cours sur la mise en oeuvre technologies de Streaming HTTP avec le langage Java](https://mickael-baron.fr/soa/streaminghttp-mise-en-oeuvre).
+* [Support de cours sur la mise en œuvre de technologies de Streaming HTTP avec le langage Java](https://mickael-baron.fr/soa/streaminghttp-mise-en-oeuvre) ;
+* [Support de cours sur une introduction aux architectures microservices](https://mickael-baron.fr/soa/introduction-microservices "Support de cours sur une introduction aux architectures microservices") ;
+* [Support de cours sur les outils et bibliothèques pour la mise en œuvre d'architectures microservices](https://mickael-baron.fr/soa/microservices-mise-en-oeuvre "Support de cours sur les outils et bibliothèques pour la mise en œuvre d'architectures microservices").
