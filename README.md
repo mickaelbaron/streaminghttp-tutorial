@@ -14,13 +14,13 @@ Une grande partie du code vous sera donnée comme support dans le répertoire _w
 
 **Buts pédagogiques** : identifier la communication de Streaming HTTP adaptée à un besoin, utiliser la bibliothèque Tyrus pour implémenter un client WebSocket, utiliser la bibliothèque JAX-RS et son module SSE pour implémenter un SSE, débogguer un SSE avec **cURL**.
 
-> Ce dépôt est utilisé dans le cadre d'un cours sur les architectures orientées services que je dispense à l'[ISAE-ENSMA](https://www.ensma.fr) et à l'[Université de Poitiers](http://www.univ-poitiers.fr/) en français. Tous les supports de cours et tutoriaux sont disponibles sur ma page Developpez.com : [https://mbaron.developpez.com](https://mbaron.developpez.com/#page_soa) et sur ma page personnelle : [https://mickael-baron.fr/](https://mickael-baron.fr/).
+> Ce dépôt est utilisé dans le cadre d'un cours sur les architectures orientées services que je dispense à l'[ISAE-ENSMA](https://www.ensma.fr) et à l'[Université de Poitiers](https://www.univ-poitiers.fr/) en français. Tous les supports de cours et tutoriaux sont disponibles sur ma page Developpez.com : [https://mbaron.developpez.com](https://mbaron.developpez.com/#page_soa) et sur ma page personnelle : [https://mickael-baron.fr/](https://mickael-baron.fr/).
 
 ## Prérequis logiciels
 
 Avant de démarrer cette série d'exercices, veuillez préparer votre environnement de développement en installant les outils suivants :
 
-* [Java via OpenJDK](http://jdk.java.net/ "Java 8 à 11") ;
+* [Java via OpenJDK](https://jdk.java.net/ "Java 8 à 11") ;
 * [Maven](https://maven.apache.org/ "Maven") ;
 * [Eclipse](https://www.eclipse.org/ "Eclipse") ;
 * [cURL](https://curl.haxx.se "cURL").
@@ -67,7 +67,7 @@ Retrouver les précédentes leçons :
 * [Tutoriel sur SOAP-UI pour inspecter et invoquer un service web étendus/SOAP via l’outil SOAP-UI](https://github.com/mickaelbaron/soapui-tutorial) ;
 * [Tutoriel sur JAX-WS pour implémenter des services web étendus/SOAP](https://github.com/mickaelbaron/jaxws-tutorial) ;
 * [Tutoriel sur JAX-RS pour implémenter des services web REST](https://github.com/mickaelbaron/jaxrs-tutorial) ;
-* [Tutoriel sur le développement d'une application basée sur une architecture microservice avec Docker,](https://github.com/mickaelbaron/javamicroservices-tutorial).
+* [Tutoriel sur le développement d'une application basée sur une architecture microservice avec Docker](https://github.com/mickaelbaron/javamicroservices-tutorial).
 
 Pour aller plus loin, vous pouvez consulter les ressources suivantes :
 
