@@ -4,7 +4,7 @@ Ce premier exercice propose de choisir les solutions technologiques et les donn�
 
 * service web REST ;
 * SSE (Server-Sent Event) pour une communication unidirectionnelle du serveur vers le client ;
-* Web Socker pour une communication bidirectionnelle client/serveur.
+* WebSocket pour une communication bidirectionnelle client/serveur.
 
 Vous allez donc choisir pour les quatre interfaces graphiques une ou plusieurs solutions technologiques (REST, SSE ou WS). Vous aurez également à définir les données qui seront à retourner au serveur et la structure des données que le serveur retournera au client.
 

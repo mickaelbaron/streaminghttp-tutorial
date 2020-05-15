@@ -62,7 +62,7 @@ BookResult readEntity = post.readEntity(BookResult.class); // Extraction de l'ob
 > Vous pouvez utiliser cette API cliente en une seule ligne !!!
 
 ```Java
-Response response = =ClientBuilder.newClient().target("http://127.0.0.1:9992").path("/books/queryparameters").request().post(Entity.entity(myBook, MediaType.APPLICATION_JSON_TYPE));
+Response response = ClientBuilder.newClient().target("http://127.0.0.1:9992").path("/books/queryparameters").request().post(Entity.entity(myBook, MediaType.APPLICATION_JSON_TYPE));
 ```
 
 * Depuis le projet _spellwhatroyal-swingclient_ compléter la méthode `SpellWhatRoyalController#createPlayer(String value)` en respectant l'algorithme suivant :
