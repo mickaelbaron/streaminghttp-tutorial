@@ -13,7 +13,7 @@ La partie serveur de cette communication est déjà implémentée.
 
 * Démarrer l'environnement de développement Eclipse.
 
-* Importer le projet Maven **spellwhatroyal-java** disponible dans le répertoire _workspace_ (**File -> Import -> Maven -> Existing Maven Projects**), choisir le répertoire du projet, puis faire **Finish**.
+* Importer le projet Maven **spellwhatroyal** disponible dans le répertoire _workspace_ (**File -> Import -> Maven -> Existing Maven Projects**), choisir le répertoire du projet, puis faire **Finish**.
 
 * Examiner les différents sous-dossiers du projet « Spell What Royal »
   * _spellwhatroyal-server_ projet pour la partie serveur développé en Java ;
