@@ -35,18 +35,8 @@ public class GameEndpoint {
 	
 	@OnOpen
 	public void onOpen(Session session, @PathParam("tokenid") String tokenid) {
-		boolean updateSessionId = this.refPlayerEngine.updateSessionId(tokenid, session.getId());
-		if (updateSessionId) {
-			session.setMaxIdleTimeout(0);			
-		} else {
-			if (!"debug".equalsIgnoreCase(tokenid)) {
-				try {
-					session.close();
-				} catch (IOException e) {
-					throw new NotYetImplementException();
-				}				
-			}
-		}
+		this.refPlayerEngine.updateSessionId(tokenid, session.getId());
+		session.setMaxIdleTimeout(0);
 	}
 
 	@OnMessage

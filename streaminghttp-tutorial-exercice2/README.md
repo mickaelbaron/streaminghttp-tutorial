@@ -13,7 +13,7 @@ La partie serveur de cette communication est déjà implémentée.
 
 * Démarrer l'environnement de développement Eclipse.
 
-* Importer le projet Maven **spellwhatroyal-java** disponible dans le répertoire _workspace_ (**File -> Import -> Maven -> Existing Maven Projects**), choisir le répertoire du projet, puis faire **Finish**.
+* Importer le projet Maven **spellwhatroyal** disponible dans le répertoire _workspace_ (**File -> Import -> Maven -> Existing Maven Projects**), choisir le répertoire du projet, puis faire **Finish**.
 
 * Examiner les différents sous-dossiers du projet « Spell What Royal »
   * _spellwhatroyal-server_ projet pour la partie serveur développé en Java ;
@@ -28,7 +28,6 @@ Nous allons démarrer le serveur pour tester la future communication.
 
 ```console
 $ curl -H "Content-Type: application/json" -X POST -d '{"username":"J1"}' http://localhost:8080/authentication
-
 {"token":"1"}
 ```
 
@@ -66,10 +65,11 @@ Response response = ClientBuilder.newClient().target("http://127.0.0.1:9992").pa
 ```
 
 * Depuis le projet _spellwhatroyal-swingclient_ compléter la méthode `SpellWhatRoyalController#createPlayer(String value)` en respectant l'algorithme suivant :
+
   * créer un objet `Credentials` à partir du nom saisi sur l'écran de connexion ;
   * invoquer le service web ;
   * si le statut de la réponse est 200 :
-    * extraire un object `CredentialsResult` depuis la réponse ;
+    * extraire un objet `CredentialsResult` depuis la réponse ;
     * mettre à jour le modèle du jeu avec le nom et le token obtenu ;
     * invoquer la méthode `SpellWhatRoyalController#start()`.
   * sinon :

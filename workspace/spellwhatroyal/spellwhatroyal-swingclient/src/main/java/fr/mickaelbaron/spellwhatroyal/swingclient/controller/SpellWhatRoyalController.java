@@ -4,20 +4,41 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
+import javax.websocket.ClientEndpointConfig;
+import javax.websocket.Decoder;
+import javax.websocket.DeploymentException;
 import javax.websocket.EncodeException;
+import javax.websocket.Encoder;
+import javax.websocket.Endpoint;
+import javax.websocket.EndpointConfig;
+import javax.websocket.MessageHandler;
 import javax.websocket.Session;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 import javax.ws.rs.sse.InboundSseEvent;
 import javax.ws.rs.sse.SseEventSource;
 
+import org.glassfish.tyrus.client.ClientManager;
+
+import fr.mickaelbaron.spellwhatroyal.api.DataResultDecoder;
 import fr.mickaelbaron.spellwhatroyal.api.NotYetImplementException;
+import fr.mickaelbaron.spellwhatroyal.api.PlayerDataEncoderDecoder;
+import fr.mickaelbaron.spellwhatroyal.api.model.AllPlayerDataResult;
+import fr.mickaelbaron.spellwhatroyal.api.model.Credentials;
+import fr.mickaelbaron.spellwhatroyal.api.model.CredentialsResult;
+import fr.mickaelbaron.spellwhatroyal.api.model.DataResult;
 import fr.mickaelbaron.spellwhatroyal.api.model.GameData;
 import fr.mickaelbaron.spellwhatroyal.api.model.PlayerData;
+import fr.mickaelbaron.spellwhatroyal.api.model.PlayerDataResult;
 import fr.mickaelbaron.spellwhatroyal.api.model.PlayerResultData;
 import fr.mickaelbaron.spellwhatroyal.swingclient.model.GameModel;
 import fr.mickaelbaron.spellwhatroyal.swingclient.ui.AuthenticationUI;
@@ -43,7 +64,7 @@ public class SpellWhatRoyalController
 
 	private Client clientRest;
 
-//	private ClientManager clientWS;
+	private ClientManager clientWS;
 
 	private Session currentWSSession;
 
@@ -65,7 +86,7 @@ public class SpellWhatRoyalController
 
 		refModel = new GameModel();
 		this.clientRest = ClientBuilder.newClient();
-//		this.clientWS = ClientManager.createClient();
+		this.clientWS = ClientManager.createClient();
 
 		this.showAuthenticationUI();
 	}
@@ -76,32 +97,124 @@ public class SpellWhatRoyalController
 
 	@Override
 	public void createPlayer(String value) {
-		// Exercice 2: to complete 
+		// Call REST web service.
+
+		Credentials newPlayer = new Credentials();
+		newPlayer.setUsername(value);
+
+		try {
+			Response post = clientRest.target(getRestURI()).path("authentication").request()
+					.post(Entity.entity(newPlayer, MediaType.APPLICATION_JSON_TYPE));
+			if (post.getStatus() == 200) {
+				CredentialsResult readEntity = post.readEntity(CredentialsResult.class);
+
+				refModel.setPlayerName(value);
+				refModel.setToken(readEntity.getToken());
+
+				this.start();
+			} else {
+				System.err.println("Problem to create player to the server.");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.err.println("Problem to connect to the server.");
+		}
 	}
 
 	@Override
 	public void newValue(String value) {
-		// Exercice 4: to complete
+		// In
+		try {
+			// Post
+			PlayerData newPlayerData = new PlayerData();
+			newPlayerData.setToken(refModel.getToken());
+			newPlayerData.setValue(value);
+			currentWSSession.getBasicRemote().sendObject(newPlayerData);
+		} catch (IOException e) {
+			e.printStackTrace();
+
+			throw new NotYetImplementException();
+		} catch (EncodeException e) {
+			e.printStackTrace();
+
+			throw new NotYetImplementException();
+		}
 	}
 
 	private void createSseEventSource() {	
-		// Exercice 3: to complete
+		WebTarget webTarget = clientRest.target(getRestURI()).path("game").path("timer");
+		build = SseEventSource.target(webTarget).build();
+		
+		build.register(onEvent, onError, onComplete);
+		build.open();
 	}
 	
 	private Consumer<InboundSseEvent> onEvent = (InboundSseEvent inboundSseEvent) -> {
-		// Exercice 3: to complete
+		GameData readData = inboundSseEvent.readData(GameData.class);
+
+		switch (readData.getState()) {
+		case PRE_GAME: {
+			preGame(readData);
+
+			break;
+		}
+		case IN_GAME: {
+			inGame(readData);
+
+			break;
+		}
+		case POST_GAME: {
+			postGame(readData);
+
+			break;
+		}
+		}
 	};
 
 	private Consumer<Throwable> onError = (throwable) -> {
-		// Exercice 3: to complete
+		throwable.printStackTrace();
 	};
 
 	private Runnable onComplete = () -> {
-		// Exercice 3: to complete
+		goToAuthentication();
 	};
 
 	private void createWebsocket() {
-		// Exercice 4: to complete
+		// Create WS connection.
+		final ClientEndpointConfig cec = ClientEndpointConfig.Builder.create()
+				.encoders(Arrays.<Class<? extends Encoder>>asList(PlayerDataEncoderDecoder.class))
+				.decoders(Arrays.<Class<? extends Decoder>>asList(DataResultDecoder.class)).build();
+		try {
+			URI uriBuild = UriBuilder.fromUri("ws://" + HOST + "/game/" + this.refModel.getToken()).port(PORT).build();
+
+			currentWSSession = clientWS.connectToServer(new Endpoint() {
+				@Override
+				public void onOpen(Session session, EndpointConfig config) {
+					session.addMessageHandler(new MessageHandler.Whole<DataResult>() {
+						@Override
+						public void onMessage(DataResult message) {
+							if (message instanceof AllPlayerDataResult) {
+								AllPlayerDataResult refDataResult = (AllPlayerDataResult) message;
+								refGameUI.setOthers(
+										refDataResult.getRightAnswers() + " / " + refDataResult.getPlayers());
+							} else if (message instanceof PlayerDataResult) {
+								PlayerDataResult refDataResult = (PlayerDataResult) message;
+								refGameUI.setCheck(refDataResult.getValid() ? "Yes" : "No");
+							} else {
+								throw new NotYetImplementException();
+							}
+
+						}
+					});
+				}
+
+			}, cec, uriBuild);
+		} catch (DeploymentException | IOException e) {
+			e.printStackTrace();
+
+			throw new NotYetImplementException();
+		}
+
 	}
 	
 	private void start() {
@@ -127,14 +240,23 @@ public class SpellWhatRoyalController
 	}
 
 	private void inGame(GameData readData) {
-		// Exercice 4: to complete
+		URL gameDataURI = this.createURLFromString(readData.getUri());
+
+		refGameUI.setImage(gameDataURI);
+		refGameUI.setTimer(Integer.toString(readData.getCounter()));
+		refGameUI.setHelp(readData.getHelp());
+		refGameUI.setScore(Integer.toString(refModel.getScore()));
+
+		showGameUI();
 
 		// Clean the next step.
 		this.refResultUI.clean();
 	}
 
 	private void preGame(GameData readData) {
-		// Exercice 3: to complete
+		refWaitingServerUI.setTimer(Integer.toString(readData.getCounter()));
+
+		showWaitingServerUI();
 
 		// Clean the next step.
 		this.refGameUI.clean();

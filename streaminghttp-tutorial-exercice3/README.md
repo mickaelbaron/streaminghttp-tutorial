@@ -1,4 +1,4 @@
-# Exercice 3 : réaliser la communication pour la mise en attente d'une nouvelle manche
+# Exercice 3 : réaliser la communication pour la mise en attente d'une nouvelle manche
 
 Ce troisième exercice propose d'implémenter la partie cliente de la communication Server-Sent Event pour la mise en attente d'une nouvelle manche. Nous utiliserons l'API cliente JAX-RS avec son module `SseEventSource` ainsi que le langage Java.
 

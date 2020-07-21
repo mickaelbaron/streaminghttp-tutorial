@@ -25,14 +25,27 @@
 			<artifactId>jersey-media-json-jackson</artifactId>
 		</dependency>
 
-		<!-- Exercice 3: to complete -->
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-sse</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.glassfish.jersey.inject</groupId>
 			<artifactId>jersey-hk2</artifactId>
 		</dependency>
 		
-		<!-- Exercice 4: to complete -->
+		<dependency>
+			<groupId>org.glassfish.tyrus</groupId>
+			<artifactId>tyrus-client</artifactId>
+			<version>${tyrus.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.glassfish.tyrus</groupId>
+			<artifactId>tyrus-container-grizzly-client</artifactId>
+			<version>${tyrus.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>fr.mickaelbaron</groupId>
