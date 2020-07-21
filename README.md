@@ -4,9 +4,9 @@ L'objectif de cette série d'exercices est d'apprendre à concevoir et développ
 
 Nous utiliserons pour cela plusieurs technologies :
 
-* WebSocket pour la communication bidirectionnelle entre la couche cliente et serveur de l'application ;
+* WebSocket pour la communication bidirectionnelle entre la couche cliente et la couche serveur ;
 * Server-Sent Event (SSE) pour la communication monodirectionelle entre la couche serveur et la couche cliente ;
-* Service web REST pour une communication entre la couche cliente vers serveur.
+* Service web REST pour une communication de la couche cliente vers la couche serveur.
 
 Nous utiliserons le langage Java et les bibliothèques Tyrus pour le développement des WebSocket et JAX-RS pour le développeur de Server-Sent Event.
 
