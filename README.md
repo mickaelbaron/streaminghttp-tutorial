@@ -14,13 +14,13 @@ Une grande partie du code vous sera donnée comme support dans le répertoire _w
 
 **Buts pédagogiques** : identifier la communication de Streaming HTTP adaptée à un besoin, utiliser la bibliothèque Tyrus pour implémenter un client WebSocket, utiliser la bibliothèque JAX-RS et son module SSE pour implémenter un SSE, débogguer un SSE avec **cURL**.
 
-> Ce dépôt est utilisé dans le cadre d'un cours sur les architectures orientées services que je dispense à l'[ISAE-ENSMA](https://www.ensma.fr) et à l'[Université de Poitiers](https://www.univ-poitiers.fr/) en français. Tous les supports de cours et tutoriaux sont disponibles sur ma page Developpez.com : [https://mbaron.developpez.com](https://mbaron.developpez.com/#page_soa) et sur ma page personnelle : [https://mickael-baron.fr/](https://mickael-baron.fr/).
+> Ce dépôt est utilisé dans le cadre d'un cours sur les architectures orientées services que je dispense à l'[ISAE-ENSMA](https://www.ensma.fr) et à l'[Université de Poitiers](http://www.univ-poitiers.fr/) en français. Tous les supports de cours et tutoriaux sont disponibles sur mon blog personnel : [https://mickael-baron.fr/soa/](https://mickael-baron.fr/soa/).
 
 ## Prérequis logiciels
 
 Avant de démarrer cette série d'exercices, veuillez préparer votre environnement de développement en installant les outils suivants :
 
-* [Java via OpenJDK](https://jdk.java.net/ "Java 8 à 11") ;
+* [Java via OpenJDK](https://jdk.java.net/ "Java") ;
 * [Maven](https://maven.apache.org/ "Maven") ;
 * [Eclipse](https://www.eclipse.org/ "Eclipse") ;
 * [cURL](https://curl.haxx.se "cURL").

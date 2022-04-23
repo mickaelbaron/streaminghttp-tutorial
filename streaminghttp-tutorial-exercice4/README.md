@@ -148,7 +148,7 @@ public void onMessage(DataResult message) {
 * Afin de vérifier que le serveur communique avec tous les clients, nous allons créer une connexion WebSocket depuis **cURL**.
 
 ```console
- curl --include \
+$ curl --include \
      --no-buffer \
      --header "Connection: Upgrade" \
      --header "Upgrade: websocket" \
