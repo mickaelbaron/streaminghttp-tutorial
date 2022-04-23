@@ -130,15 +130,6 @@ public class ResultUI extends JFrame {
 		return newURL;
 	}
 
-	public void clean() {
-		
-	}
-	
-	public static void main(String[] args) {
-		ResultUI resultUI = new ResultUI(null);
-		resultUI.setImage(createURLFromString(
-				"https://www.notretemps.com/cache/com_zoo_images/aa/chien-chaleur3_ef20cfa403d9b0f8bafa2b9ffbda02a3.jpg"));
-		resultUI.setVisible(true);
-		resultUI.setPlayers("dssqdsq\ndssqdsq");
+	public void clean() {	
 	}
 }

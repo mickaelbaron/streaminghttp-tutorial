@@ -2,9 +2,7 @@ package fr.mickaelbaron.spellwhatroyal.swingclient.ui;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.geom.AffineTransform;
 import java.io.IOException;
 import java.net.URL;
 
@@ -55,22 +53,19 @@ public class ResizableImagePane extends JPanel {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		if (img != null) {
-			Graphics2D g2d = (Graphics2D) g.create();
-
-			int width = getWidth();
-			int height = getHeight();
-
 			double scaleFactor = getScaleFactorToFit(new Dimension(img.getWidth(this), img.getHeight(this)), getSize());
 
-			int x = (int) ((width - (img.getWidth(this) * scaleFactor)) / 2);
-			int y = (int) ((height - (img.getHeight(this) * scaleFactor)) / 2);
+			int scaleWidth = (int) Math.round(img.getWidth(this) * scaleFactor);
+			int scaleHeight = (int) Math.round(img.getHeight(this) * scaleFactor);
+			Image scaled = img.getScaledInstance(scaleWidth, scaleHeight, Image.SCALE_SMOOTH);
 
-			AffineTransform at = new AffineTransform();
-			at.translate(x, y);
-			at.scale(scaleFactor, scaleFactor);
-			g2d.setTransform(at);
-			g2d.drawImage(img, 0, 0, this);
-			g2d.dispose();
+			int width = getWidth() - 1;
+			int height = getHeight() - 1;
+
+			int x = (width - scaled.getWidth(this)) / 2;
+			int y = (height - scaled.getHeight(this)) / 2;
+
+			g.drawImage(scaled, x, y, this);
 		}
 	}
 
@@ -82,12 +77,10 @@ public class ResizableImagePane extends JPanel {
 		double dScale = 1d;
 
 		if (original != null && toFit != null) {
-
 			double dScaleWidth = getScaleFactor(original.width, toFit.width);
 			double dScaleHeight = getScaleFactor(original.height, toFit.height);
 
 			dScale = Math.min(dScaleHeight, dScaleWidth);
-
 		}
 		return dScale;
 	}

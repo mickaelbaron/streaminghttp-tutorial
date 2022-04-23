@@ -55,7 +55,7 @@ public class GameEngine {
 		firstElement.setText("maison");
 		firstElement.setHelp("6 lettres");
 		firstElement.setUri(
-				"https://www.ouestfrance-immo.com/photo-vente-maison-beuzeville-27/207/maison-a-vendre-beuzeville-14348128_1_1573585794_30cc8ab9991304b562c1be40b66c3c3c_crop_480-360_.jpg");
+				"https://www.maisons-du-nord.fr/uploads/images/5ac5df322f55c5aa689f79a101_mdn-realisation-maison-noyelle-sous-bellone.jpg");
 		spellWhatElements.add(firstElement);
 		
 		SpellWhatElement secondElement = new SpellWhatElement();
