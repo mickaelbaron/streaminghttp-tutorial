@@ -17,6 +17,7 @@ La partie serveur de ces communucations est déjà implémentée. Cet exercice s
 * Ouvrir un terminal et exécuter la commande suivante en utilisant **cURL** pour se connecter au Server-Sent Event (s'intéresser cette fois au message dont la valeur de `state` est `IN_GAME`).
 
 ```console
+$ curl -H "Accept:text/event-stream" http://localhost:8080/game/timer
 ...
 event: update-timer
 id: 1
@@ -70,11 +71,13 @@ private void createWebsocket() {
         URI uriBuild = UriBuilder.fromUri("ws://" + HOST + "/game/" + this.refModel.getToken()).port(PORT).build();
 
         currentWSSession = clientWS.connectToServer(new Endpoint() {
-            Override
+            @Override
             public void onOpen(Session session, EndpointConfig config) {
-                // Sera complété plus tard.
-            }, cec, uriBuild);
-        }
+                session.addMessageHandler(new MessageHandler.Whole<DataResult>() {
+                    // Sera complété plus tard.
+                });
+            }
+        }, cec, uriBuild);
     } catch (DeploymentException | IOException e) {
         e.printStackTrace();
         throw new NotYetImplementException();
