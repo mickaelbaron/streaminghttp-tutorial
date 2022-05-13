@@ -240,9 +240,9 @@ public class SpellWhatRoyalController
 	}
 
 	private void inGame(GameData readData) {
-		URL gameDataURI = this.createURLFromString(readData.getUri());
+		URL gameDataURL = this.createURLFromString(readData.getUrl());
 
-		refGameUI.setImage(gameDataURI);
+		refGameUI.setImage(gameDataURL);
 		refGameUI.setTimer(Integer.toString(readData.getCounter()));
 		refGameUI.setHelp(readData.getHelp());
 		refGameUI.setScore(Integer.toString(refModel.getScore()));
@@ -263,9 +263,9 @@ public class SpellWhatRoyalController
 	}
 
 	private void postGame(GameData readData) {
-		URL gameDataURI = this.createURLFromString(readData.getUri());
+		URL gameDataURL = this.createURLFromString(readData.getUrl());
 
-		this.refResultUI.setImage(gameDataURI);
+		this.refResultUI.setImage(gameDataURL);
 		this.refResultUI.setSolution(readData.getValue());
 		this.refResultUI.setScore(Integer.toString(refModel.getScore()));
 		this.initPostGameForCurrentPlayer(readData.getValue(), readData.getResult());

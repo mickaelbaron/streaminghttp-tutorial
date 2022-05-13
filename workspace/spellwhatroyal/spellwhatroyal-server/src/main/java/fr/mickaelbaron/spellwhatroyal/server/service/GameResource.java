@@ -50,7 +50,7 @@ public class GameResource {
 				SpellWhatElement currentSpellWhatElement = refGameEngine.getCurrentSpellWhatElement();
 				
 				if (refGameEngine.getState() != GameState.PRE_GAME) {
-					newGameData.setUri(currentSpellWhatElement.getUri());					
+					newGameData.setUrl(currentSpellWhatElement.getUrl());
 				}
 				
 				// Ingame data.

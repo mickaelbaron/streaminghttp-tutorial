@@ -7,16 +7,16 @@ public class SpellWhatElement {
 
 	private String text;
 	
-	private String uri;
+	private String url;
 	
 	private String help;
 
-	public String getUri() {
-		return uri;
+	public String getUrl() {
+		return url;
 	}
 
-	public void setUri(String uri) {
-		this.uri = uri;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public String getText() {

@@ -5,7 +5,6 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.swing.BorderFactory;
@@ -16,7 +15,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import fr.mickaelbaron.spellwhatroyal.api.NotYetImplementException;
 import fr.mickaelbaron.spellwhatroyal.swingclient.controller.IResultController;
 
 /**
@@ -116,18 +114,6 @@ public class ResultUI extends JFrame {
 		ref.setEnabled(false);
 
 		return info;
-	}
-
-	private static URL createURLFromString(String value) {
-		URL newURL;
-		try {
-			newURL = new URL(value);
-		} catch (MalformedURLException e1) {
-			e1.printStackTrace();
-
-			throw new NotYetImplementException();
-		}
-		return newURL;
 	}
 
 	public void clean() {	
