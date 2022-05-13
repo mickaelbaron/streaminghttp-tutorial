@@ -54,32 +54,32 @@ public class GameEngine {
 		SpellWhatElement firstElement = new SpellWhatElement();
 		firstElement.setText("maison");
 		firstElement.setHelp("6 lettres");
-		firstElement.setUri(
+		firstElement.setUrl(
 				"https://www.maisons-du-nord.fr/uploads/images/5ac5df322f55c5aa689f79a101_mdn-realisation-maison-noyelle-sous-bellone.jpg");
 		spellWhatElements.add(firstElement);
 		
 		SpellWhatElement secondElement = new SpellWhatElement();
 		secondElement.setText("moto");
 		secondElement.setHelp("4 lettres");
-		secondElement.setUri("https://cdn130.picsart.com/312329717035201.jpg");
+		secondElement.setUrl("https://cdn130.picsart.com/312329717035201.jpg");
 		spellWhatElements.add(secondElement);
 		
 		SpellWhatElement thirdElement = new SpellWhatElement();
 		thirdElement.setText("mickaelbaron");
 		thirdElement.setHelp("Le compte Twitter @(Prénom + Nom) sans espace");
-		thirdElement.setUri("https://mickael-baron.fr/images/mbaron.jpg");
+		thirdElement.setUrl("https://mickael-baron.fr/images/mbaron.jpg");
 		spellWhatElements.add(thirdElement);
 		
 		SpellWhatElement fourthElement = new SpellWhatElement();
 		fourthElement.setText("casimir");
 		fourthElement.setHelp("L'île aux enfants");
-		fourthElement.setUri("http://idata.over-blog.com/0/00/74/35/33/casimir.jpg");
+		fourthElement.setUrl("http://idata.over-blog.com/0/00/74/35/33/casimir.jpg");
 		spellWhatElements.add(fourthElement);
 		
 		SpellWhatElement fifthElement = new SpellWhatElement();
 		fifthElement.setText("ensma");
 		fifthElement.setHelp("La soucoupe écrasée");
-		fifthElement.setUri("https://i0.wp.com/bde.ensma.fr/wp-content/uploads/2019/05/ensmadehaut.jpg");
+		fifthElement.setUrl("https://i0.wp.com/bde.ensma.fr/wp-content/uploads/2019/05/ensmadehaut.jpg");
 		spellWhatElements.add(fifthElement);
 		
 		initSpellWhatElements();			

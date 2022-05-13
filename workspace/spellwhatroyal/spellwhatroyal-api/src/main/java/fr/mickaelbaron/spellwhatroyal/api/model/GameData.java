@@ -11,7 +11,7 @@ public class GameData {
 
 	private GameState state;
 
-	private String uri;
+	private String url;
 
 	private String help;
 
@@ -35,12 +35,12 @@ public class GameData {
 		this.state = state;
 	}
 
-	public String getUri() {
-		return uri;
+	public String getUrl() {
+		return url;
 	}
 
-	public void setUri(String uri) {
-		this.uri = uri;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public String getHelp() {
@@ -69,7 +69,7 @@ public class GameData {
 
 	@Override
 	public String toString() {
-		return "GameData [counter=" + counter + ", state=" + state + ", uri=" + uri + ", help=" + help + ", value="
+		return "GameData [counter=" + counter + ", state=" + state + ", url=" + url + ", help=" + help + ", value="
 				+ value + ", result=" + result + "]";
 	}
 }
