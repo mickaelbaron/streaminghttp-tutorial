@@ -5,7 +5,7 @@
 	<artifactId>spellwhatroyal-server</artifactId>
 	<packaging>jar</packaging>
 	<properties>
-		<kumuluzee.version>4.0.0</kumuluzee.version>
+		<kumuluzee.version>4.1.0</kumuluzee.version>
 	</properties>
 	<parent>
 		<groupId>fr.mickaelbaron</groupId>
