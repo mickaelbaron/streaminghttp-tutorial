@@ -49,49 +49,48 @@ public class GameEngine {
 	public void postConstruct(@Observes @Initialized(ApplicationScoped.class) Object o) {
 		System.out.println("Starting game.");
 	}
-	
+
 	private void initData() {
 		SpellWhatElement firstElement = new SpellWhatElement();
 		firstElement.setText("maison");
 		firstElement.setHelp("6 lettres");
-		firstElement.setUrl(
-				"https://www.maisons-du-nord.fr/uploads/images/5ac5df322f55c5aa689f79a101_mdn-realisation-maison-noyelle-sous-bellone.jpg");
+		firstElement.setUrl("maison.jpg");
 		spellWhatElements.add(firstElement);
-		
+
 		SpellWhatElement secondElement = new SpellWhatElement();
 		secondElement.setText("moto");
 		secondElement.setHelp("4 lettres");
-		secondElement.setUrl("https://cdn130.picsart.com/312329717035201.jpg");
+		secondElement.setUrl("moto.jpg");
 		spellWhatElements.add(secondElement);
-		
+
 		SpellWhatElement thirdElement = new SpellWhatElement();
 		thirdElement.setText("mickaelbaron");
 		thirdElement.setHelp("Le compte Twitter @(Prénom + Nom) sans espace");
-		thirdElement.setUrl("https://mickael-baron.fr/images/mbaron.jpg");
+		thirdElement.setUrl("mbaron.jpg");
 		spellWhatElements.add(thirdElement);
-		
+
 		SpellWhatElement fourthElement = new SpellWhatElement();
 		fourthElement.setText("casimir");
 		fourthElement.setHelp("L'île aux enfants");
-		fourthElement.setUrl("http://idata.over-blog.com/0/00/74/35/33/casimir.jpg");
+		fourthElement.setUrl("casimir.jpg");
 		spellWhatElements.add(fourthElement);
-		
+
 		SpellWhatElement fifthElement = new SpellWhatElement();
 		fifthElement.setText("ensma");
 		fifthElement.setHelp("La soucoupe écrasée");
-		fifthElement.setUrl("https://i0.wp.com/bde.ensma.fr/wp-content/uploads/2019/05/ensmadehaut.jpg");
+		fifthElement.setUrl("ensma.jpg");
 		spellWhatElements.add(fifthElement);
-		
-		initSpellWhatElements();			
+
+		initSpellWhatElements();
 	}
-	
+
 	@PostConstruct
 	public void init() {
 		this.initData();
-		
+
 		executor = Executors.newScheduledThreadPool(1);
 		startState = System.currentTimeMillis(); // In case where ...
-		
+
 		preGameRunnable = () -> {
 			state = GameState.PRE_GAME;
 			startState = System.currentTimeMillis();
@@ -140,7 +139,7 @@ public class GameEngine {
 			initSpellWhatElements();
 		}
 	}
-	
+
 	private void initSpellWhatElements() {
 		spellWhatElementCursor = 0;
 		Collections.shuffle(spellWhatElements);

@@ -1,7 +1,6 @@
 package fr.mickaelbaron.spellwhatroyal.swingclient.controller;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.util.Arrays;
@@ -228,15 +227,7 @@ public class SpellWhatRoyalController
 	}
 
 	private URL createURLFromString(String value) {
-		URL newURL;
-		try {
-			newURL = new URL(value);
-		} catch (MalformedURLException e1) {
-			e1.printStackTrace();
-
-			throw new NotYetImplementException();
-		}
-		return newURL;
+		return this.getClass().getResource("/" + value);
 	}
 
 	private void inGame(GameData readData) {
