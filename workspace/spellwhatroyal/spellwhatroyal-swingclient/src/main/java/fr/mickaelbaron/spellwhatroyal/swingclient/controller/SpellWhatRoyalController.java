@@ -7,25 +7,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
-import javax.websocket.ClientEndpointConfig;
-import javax.websocket.Decoder;
-import javax.websocket.DeploymentException;
-import javax.websocket.EncodeException;
-import javax.websocket.Encoder;
-import javax.websocket.Endpoint;
-import javax.websocket.EndpointConfig;
-import javax.websocket.MessageHandler;
-import javax.websocket.Session;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriBuilder;
-import javax.ws.rs.sse.InboundSseEvent;
-import javax.ws.rs.sse.SseEventSource;
-
 import org.glassfish.tyrus.client.ClientManager;
 
 import fr.mickaelbaron.spellwhatroyal.api.DataResultDecoder;
@@ -44,6 +25,24 @@ import fr.mickaelbaron.spellwhatroyal.swingclient.ui.AuthenticationUI;
 import fr.mickaelbaron.spellwhatroyal.swingclient.ui.GameUI;
 import fr.mickaelbaron.spellwhatroyal.swingclient.ui.ResultUI;
 import fr.mickaelbaron.spellwhatroyal.swingclient.ui.WaitingServerUI;
+import jakarta.websocket.ClientEndpointConfig;
+import jakarta.websocket.Decoder;
+import jakarta.websocket.DeploymentException;
+import jakarta.websocket.EncodeException;
+import jakarta.websocket.Encoder;
+import jakarta.websocket.Endpoint;
+import jakarta.websocket.EndpointConfig;
+import jakarta.websocket.MessageHandler;
+import jakarta.websocket.Session;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.Entity;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.UriBuilder;
+import jakarta.ws.rs.sse.InboundSseEvent;
+import jakarta.ws.rs.sse.SseEventSource;
 
 /**
  * @author Mickael BARON (baron.mickael@gmail.com)
@@ -71,7 +70,7 @@ public class SpellWhatRoyalController
 
 	private static final String HOST = "localhost";
 
-	private static final int PORT = 8080;
+	private static final int PORT = 9080;
 
 	private static URI getRestURI() {
 		return UriBuilder.fromUri("http://" + HOST).port(PORT).build();

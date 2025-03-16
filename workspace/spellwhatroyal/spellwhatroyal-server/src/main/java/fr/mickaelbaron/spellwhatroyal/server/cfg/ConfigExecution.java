@@ -1,10 +1,7 @@
 package fr.mickaelbaron.spellwhatroyal.server.cfg;
 
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-
-import org.eclipse.microprofile.config.inject.ConfigProperty;
+import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.ApplicationScoped;
 
 /**
  * @author Mickael BARON (baron.mickael@gmail.com)
@@ -12,21 +9,21 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 @ApplicationScoped
 public class ConfigExecution implements IConfigExecution {
 
-	@Inject
-	@ConfigProperty(name = "spellwhatroyal.init.delay", defaultValue = "0")
-	private Integer initDelay;
+	//@Inject
+	//@ConfigProperty(name = "spellwhatroyal.init.delay", defaultValue = "0")
+	private Integer initDelay = 0;
 	
-	@Inject
-	@ConfigProperty(name = "spellwhatroyal.pregame.delay", defaultValue = "3")
-	private Integer preGameDelay;
+	//@Inject
+	//@ConfigProperty(name = "spellwhatroyal.pregame.delay", defaultValue = "3")
+	private Integer preGameDelay = 3;
 	
-	@Inject
-	@ConfigProperty(name = "spellwhatroyal.ingame.delay", defaultValue = "10")
-	private Integer inGameDelay;
+	//@Inject
+	//@ConfigProperty(name = "spellwhatroyal.ingame.delay", defaultValue = "10")
+	private Integer inGameDelay = 10;
 	
-	@Inject
-	@ConfigProperty(name = "spellwhatroyal.postgame.delay", defaultValue = "4")
-	private Integer postGameDelay;
+	//@Inject
+	//@ConfigProperty(name = "spellwhatroyal.postgame.delay", defaultValue = "4")
+	private Integer postGameDelay = 4;
 	
 	@Override
 	public Integer getInitDelay() {

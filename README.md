@@ -22,7 +22,7 @@ Avant de démarrer cette série d'exercices, veuillez préparer votre environnem
 
 * [Java via OpenJDK](https://jdk.java.net/ "Java") ;
 * [Maven](https://maven.apache.org/ "Maven") ;
-* [Eclipse](https://www.eclipse.org/ "Eclipse") ;
+* [VSCode](https://code.visualstudio.com/ "Visual Studio Code") et le [pack d'extension pour Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack "Extension Pack for Java") ;
 * [cURL](https://curl.haxx.se "cURL").
 
 ## Présentation de l'étude de cas

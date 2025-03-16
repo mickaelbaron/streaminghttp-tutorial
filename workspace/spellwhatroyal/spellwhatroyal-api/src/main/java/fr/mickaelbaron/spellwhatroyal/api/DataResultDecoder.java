@@ -2,15 +2,14 @@ package fr.mickaelbaron.spellwhatroyal.api;
 
 import java.io.IOException;
 
-import javax.websocket.DecodeException;
-import javax.websocket.Decoder;
-import javax.websocket.EndpointConfig;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import fr.mickaelbaron.spellwhatroyal.api.model.AllPlayerDataResult;
 import fr.mickaelbaron.spellwhatroyal.api.model.DataResult;
 import fr.mickaelbaron.spellwhatroyal.api.model.PlayerDataResult;
+import jakarta.websocket.DecodeException;
+import jakarta.websocket.Decoder;
+import jakarta.websocket.EndpointConfig;
 
 /**
  * @author Mickael BARON (baron.mickael@gmail.com)

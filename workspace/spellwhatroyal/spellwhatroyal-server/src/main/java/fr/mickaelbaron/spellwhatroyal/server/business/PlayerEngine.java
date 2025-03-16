@@ -5,9 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import javax.enterprise.context.ApplicationScoped;
-
 import fr.mickaelbaron.spellwhatroyal.server.entity.PlayerGameData;
+import jakarta.enterprise.context.ApplicationScoped;
 
 /**
  * @author Mickael BARON (baron.mickael@gmail.com)

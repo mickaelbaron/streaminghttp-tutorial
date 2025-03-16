@@ -6,7 +6,7 @@
 	<packaging>jar</packaging>
 	<properties>
 		<jackson-databind.version>2.12.7.1</jackson-databind.version>
-		<websocket-client.version>1.1.2</websocket-client.version>
+		<websocket-client.version>2.1.0</websocket-client.version>
 	</properties>
 	<parent>
 		<groupId>fr.mickaelbaron</groupId>
