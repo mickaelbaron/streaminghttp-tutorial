@@ -5,13 +5,13 @@ package fr.mickaelbaron.spellwhatroyal.server.cfg;
  */
 public interface IConfigExecution {
 
-	Integer getInitDelay();
+	int getInitDelay();
 	
-	Integer getPreGameDelay();
+	int getPreGameDelay();
 	
-	Integer getInGameDelay();
+	int getInGameDelay();
 	
-	Integer getPostGameDelay();
+	int getPostGameDelay();
 	
 	String displayAllConfigExecution();
 }

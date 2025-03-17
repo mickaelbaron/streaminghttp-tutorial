@@ -39,8 +39,8 @@ public class GameData {
 		return url;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setUrl(String pUrl) {
+		this.url = pUrl;
 	}
 
 	public String getHelp() {

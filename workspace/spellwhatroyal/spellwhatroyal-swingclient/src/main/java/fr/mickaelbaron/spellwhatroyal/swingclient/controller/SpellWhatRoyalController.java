@@ -6,23 +6,20 @@ import java.net.URL;
 import java.util.List;
 import java.util.function.Consumer;
 
-import javax.websocket.EncodeException;
-import javax.websocket.Session;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.core.UriBuilder;
-import javax.ws.rs.sse.InboundSseEvent;
-import javax.ws.rs.sse.SseEventSource;
-
 import fr.mickaelbaron.spellwhatroyal.api.NotYetImplementException;
 import fr.mickaelbaron.spellwhatroyal.api.model.GameData;
-import fr.mickaelbaron.spellwhatroyal.api.model.PlayerData;
 import fr.mickaelbaron.spellwhatroyal.api.model.PlayerResultData;
 import fr.mickaelbaron.spellwhatroyal.swingclient.model.GameModel;
 import fr.mickaelbaron.spellwhatroyal.swingclient.ui.AuthenticationUI;
 import fr.mickaelbaron.spellwhatroyal.swingclient.ui.GameUI;
 import fr.mickaelbaron.spellwhatroyal.swingclient.ui.ResultUI;
 import fr.mickaelbaron.spellwhatroyal.swingclient.ui.WaitingServerUI;
+import jakarta.websocket.Session;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.core.UriBuilder;
+import jakarta.ws.rs.sse.InboundSseEvent;
+import jakarta.ws.rs.sse.SseEventSource;
 
 /**
  * @author Mickael BARON (baron.mickael@gmail.com)

@@ -7,16 +7,15 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.Initialized;
-import javax.enterprise.event.Observes;
-import javax.inject.Inject;
-
 import fr.mickaelbaron.spellwhatroyal.api.NotYetImplementException;
 import fr.mickaelbaron.spellwhatroyal.api.model.GameState;
 import fr.mickaelbaron.spellwhatroyal.server.cfg.IConfigExecution;
 import fr.mickaelbaron.spellwhatroyal.server.entity.SpellWhatElement;
+import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.Initialized;
+import jakarta.enterprise.event.Observes;
+import jakarta.inject.Inject;
 
 /**
  * @author Mickael BARON (baron.mickael@gmail.com)
@@ -49,7 +48,7 @@ public class GameEngine {
 	public void postConstruct(@Observes @Initialized(ApplicationScoped.class) Object o) {
 		System.out.println("Starting game.");
 	}
-	
+
 	private void initData() {
 		SpellWhatElement firstElement = new SpellWhatElement();
 		firstElement.setText("maison");
@@ -65,7 +64,7 @@ public class GameEngine {
 
 		SpellWhatElement thirdElement = new SpellWhatElement();
 		thirdElement.setText("mickaelbaron");
-		thirdElement.setHelp("Le compte Twitter @(Prénom + Nom) sans espace");
+		thirdElement.setHelp("Le compte Github (Prénom + Nom) sans espace");
 		thirdElement.setUrl("mbaron.jpg");
 		spellWhatElements.add(thirdElement);
 
@@ -83,14 +82,14 @@ public class GameEngine {
 
 		initSpellWhatElements();
 	}
-	
+
 	@PostConstruct
 	public void init() {
 		this.initData();
-		
+
 		executor = Executors.newScheduledThreadPool(1);
 		startState = System.currentTimeMillis(); // In case where ...
-		
+
 		preGameRunnable = () -> {
 			state = GameState.PRE_GAME;
 			startState = System.currentTimeMillis();
@@ -139,7 +138,7 @@ public class GameEngine {
 			initSpellWhatElements();
 		}
 	}
-	
+
 	private void initSpellWhatElements() {
 		spellWhatElementCursor = 0;
 		Collections.shuffle(spellWhatElements);

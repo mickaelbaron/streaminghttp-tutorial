@@ -1,13 +1,12 @@
 package fr.mickaelbaron.spellwhatroyal.api;
 
-import javax.websocket.EncodeException;
-import javax.websocket.Encoder;
-import javax.websocket.EndpointConfig;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import fr.mickaelbaron.spellwhatroyal.api.model.PlayerDataResult;
+import jakarta.websocket.EncodeException;
+import jakarta.websocket.Encoder;
+import jakarta.websocket.EndpointConfig;
 
 /**
  * @author Mickael BARON (baron.mickael@gmail.com)

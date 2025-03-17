@@ -5,9 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import javax.enterprise.context.ApplicationScoped;
-
 import fr.mickaelbaron.spellwhatroyal.server.entity.PlayerGameData;
+import jakarta.enterprise.context.ApplicationScoped;
 
 /**
  * @author Mickael BARON (baron.mickael@gmail.com)
@@ -29,12 +28,9 @@ public class PlayerEngine {
 		return incrementAndGet;
 	}
 
-	public boolean updateSessionId(String token, String sessionId) {
+	public void updateSessionId(String token, String sessionId) {
 		if (allPlayersNameByTokenId.containsKey(token)) {
-			allPlayersNameByTokenId.get(token).setSessionId(sessionId);	
-			return true;
-		} else {
-			return false;
+			allPlayersNameByTokenId.get(token).setSessionId(sessionId);			
 		}
 	}
 
