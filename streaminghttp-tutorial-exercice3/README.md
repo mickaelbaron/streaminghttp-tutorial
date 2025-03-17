@@ -62,7 +62,7 @@ WebTarget webTarget = client.target("http://IP:PORT");
 WebTarget book = webTarget.path("/books/queryparameters");
 
 // Création d'un objet SseEventSource.
-SseEventSource eventSource = SseEventSource.target(webTarget).build();
+SseEventSource eventSource = SseEventSource.target(book).build();
 
 // Abonnement à des codes (interfaces fonctionnelles) qui traiteront les nouvelles données, les erreurs et la déconnexion.
 eventSource.register(onEvent, onError, onComplete);
