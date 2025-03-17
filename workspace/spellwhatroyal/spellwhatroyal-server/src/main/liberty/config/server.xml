@@ -7,8 +7,10 @@
         <feature>jsonp</feature>
         <feature>jsonb</feature>
         <feature>websocket</feature>
+        <feature>mpConfig</feature>
     </featureManager>
     <variable name="http.port" defaultValue="9080" />
+    <variable name="spellwhatroyal.init.delay" value="0"/>
     <webApplication location="spellwhatroyal-server.war" contextRoot="/" />
 
     <httpEndpoint host="*" httpPort="${http.port}"

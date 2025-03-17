@@ -5,7 +5,7 @@
 	<artifactId>spellwhatroyal-api</artifactId>
 	<packaging>jar</packaging>
 	<properties>
-		<jackson-databind.version>2.12.7.1</jackson-databind.version>
+		<jackson-databind.version>2.18.3</jackson-databind.version>
 		<websocket-client.version>2.1.0</websocket-client.version>
 	</properties>
 	<parent>
