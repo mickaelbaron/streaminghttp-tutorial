@@ -70,7 +70,7 @@ eventSource.register(onEvent, onError, onComplete);
 Consumer<InboundSseEvent> onEvent = (InboundSseEvent inboundSseEvent) -> {
     // Code qui traitera les données reçues du serveur.
     Book readData = inboundSseEvent.readData(Book.class);
-}
+};
 
 Consumer<Throwable> onError = (throwable) -> {
     // Code qui traitera les erreurs.
@@ -78,7 +78,7 @@ Consumer<Throwable> onError = (throwable) -> {
 
 Runnable onComplete = () -> {
     // Code qui traitera la déconnexion du serveur
-}
+};
 
 // Ouverture de la connexion
 eventSource.open();
