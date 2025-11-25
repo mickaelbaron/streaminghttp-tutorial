@@ -47,7 +47,7 @@ public class SpellWhatRoyalController
 
 	private static final String HOST = "localhost";
 
-	private static final int PORT = 8080;
+	private static final int PORT = 9080;
 
 	private static URI getRestURI() {
 		return UriBuilder.fromUri("http://" + HOST).port(PORT).build();
