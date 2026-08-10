@@ -36,9 +36,9 @@ data: {"counter":8,"help":"L'île aux enfants","state":"IN_GAME","uri":"http://i
 ...
 ```
 
-- Depuis le projet _spellwhatroyal-swingclient_, compléter le code de la méthode `SpellWhatRoyalController#inGame(GameData)` afin de mettre à jour les différents éléments de l'écran de jeu (compteur, URI de l'image et aide à l'identification). La méthode `SpellWhatRoyalController#showGameUI()` est utilisée pour afficher l'écran de jeu.
+- Depuis le projet _spellwhatroyal-tambouiclient_, compléter le code de la méthode `SpellWhatRoyalController#inGame(GameData)` afin de mettre à jour les différents éléments de l'écran de jeu (compteur, URI de l'image et aide à l'identification). La méthode `SpellWhatRoyalController#showGameUI()` est utilisée pour afficher l'écran de jeu.
 
-- Tester le projet client _spellwhatroyal-swingclient_ à partir de la configuration d'exécution créée à la fin de l'exercice 2 et s'assurer que les informations sont affichées.
+- Tester le projet client _spellwhatroyal-tambouiclient_ à partir de la configuration d'exécution créée à la fin de l'exercice 2 et s'assurer que les informations sont affichées.
 
 Nous allons maintenant nous intéresser aux communications qui utilisent WebSocket. Différentes interactions sont à développer :
 
@@ -46,7 +46,7 @@ Nous allons maintenant nous intéresser aux communications qui utilisent WebSock
 - le serveur vers l'instance du client pour préciser si la valeur soumise est correcte ;
 - le serveur vers l'ensemble des instances des clients pour informer du nombre de joueur ayant trouvé la bonne réponse.
 
-- Ouvrir le projet _spellwhatroyal-swingclient_ et compléter le fichier _pom.xml_ pour ajouter la bibliothèque Tyrus afin de prendre en compte les communications WebSocket.
+- Ouvrir le projet _spellwhatroyal-tambouiclient_ et compléter le fichier _pom.xml_ pour ajouter la bibliothèque Tyrus afin de prendre en compte les communications WebSocket.
 
 ```xml
     <dependency>
@@ -64,7 +64,7 @@ Nous allons maintenant nous intéresser aux communications qui utilisent WebSock
 
 ### Étapes à suivre pour la création de la connexion WebSocket
 
-- Depuis le projet _spellwhatroyal-swingclient_, compléter le code de la méthode `SpellWhatRoyalController#createWebsocket()` en recopiant le code ci-dessous.
+- Depuis le projet _spellwhatroyal-tambouiclient_, compléter le code de la méthode `SpellWhatRoyalController#createWebsocket()` en recopiant le code ci-dessous.
 
 ```java
 private void createWebsocket() {
@@ -96,7 +96,7 @@ private void createWebsocket() {
 
 La communication WebSocket entre le client et le serveur est utilisée pour transmettre la proposition du joueur.
 
-- Depuis le projet _spellwhatroyal-swingclient_, compléter le code de la méthode `SpellWhatRoyalController#newValue(String)` qui sera appelée à chaque modification de texte.
+- Depuis le projet _spellwhatroyal-tambouiclient_, compléter le code de la méthode `SpellWhatRoyalController#newValue(String)` qui sera appelée à chaque modification de texte.
 
 ```java
 public void newValue(String value) {
@@ -120,7 +120,7 @@ public void newValue(String value) {
 
 La communication WebSocket entre le serveur et le client est utilisée pour préciser si la valeur soumise par un joueur est correcte.
 
-- Depuis le projet _spellwhatroyal-swingclient_, compléter le code de la méthode `SpellWhatRoyalController#createWebsocket()`.
+- Depuis le projet _spellwhatroyal-tambouiclient_, compléter le code de la méthode `SpellWhatRoyalController#createWebsocket()`.
 
 ```java
 public void onMessage(DataResult message) {
@@ -133,13 +133,13 @@ public void onMessage(DataResult message) {
 
 À chaque réception d'un contenu du serveur, la méthode `onMessage` sera invoquée. L'objet retourné est de type `DataResult`. Il faudra donc vérifier le sous-type pour extraire les bonnes informations.
 
-- Tester le projet client _spellwhatroyal-swingclient_ et s'assurer que les informations sont affichées.
+- Tester le projet client _spellwhatroyal-tambouiclient_ et s'assurer que les informations sont affichées.
 
 ### Étapes à suivre pour réaliser la communication entre le serveur et tous les clients
 
 La communication WebSocket entre le serveur et l'ensemble des clients est utilisée pour informer le nombre de joueur ayant trouvé la bonne réponse.
 
-- Depuis le projet _spellwhatroyal-swingclient_, compléter le code de la méthode `SpellWhatRoyalController#createWebsocket()`.
+- Depuis le projet _spellwhatroyal-tambouiclient_, compléter le code de la méthode `SpellWhatRoyalController#createWebsocket()`.
 
 ```java
 public void onMessage(DataResult message) {
@@ -155,7 +155,7 @@ public void onMessage(DataResult message) {
 
 - Afin de vérifier que le serveur communique avec tous les clients, nous allons créer une connexion WebSocket depuis **cURL**.
 
-```console
+```bash
 $ curl --include \
      --no-buffer \
      --header "Connection: Upgrade" \
@@ -181,4 +181,4 @@ Upgrade: WebSocket
 {"players":1,"rightAnswers":0}{"players":1,"rightAnswers":1}
 ```
 
-- Tester le projet client _spellwhatroyal-swingclient_ et s'assurer que les informations sont affichées sur l'écran et sur la console (**cURL**).
+- Tester le projet client _spellwhatroyal-tambouiclient_ et s'assurer que les informations sont affichées sur l'écran et sur la console (**cURL**).

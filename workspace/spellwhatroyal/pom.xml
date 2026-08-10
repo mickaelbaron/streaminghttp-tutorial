@@ -19,5 +19,6 @@
 		<module>spellwhatroyal-server</module>
 		<module>spellwhatroyal-swingclient</module>
 		<module>spellwhatroyal-api</module>
+		<module>spellwhatroyal-tambouiclient</module>
 	</modules>
 </project>
