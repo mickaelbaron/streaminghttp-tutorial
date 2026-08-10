@@ -33,7 +33,7 @@ L'étude de cas utilisée est une application appelée « Spell What Royal ».
 
 ![Logo de Spell What Royal](./images/spr-logo.jpg "Logo de Spell What Royal")
 
-« Spell What Royal » est une application client/serveur. Le rôle du serveur est de centraliser les connexions des joueurs et de gérer les différentes étapes d'une partie. Une instance d'un serveur gère une seule partie. Le client fournit les interfaces graphiques pour le joueur. Plus précisément, une application de type client lourd a été développée avec le langage Java et la boîte à outils Swing.
+« Spell What Royal » est une application client/serveur. Le rôle du serveur est de centraliser les connexions des joueurs et de gérer les différentes étapes d'une partie. Une instance d'un serveur gère une seule partie. Le client fournit les interfaces graphiques pour le joueur. Plus précisément, une application de type client lourd a été développée avec le langage Java et la bibliothèque graphique pour la console [Tamboui](https://tamboui.dev/).
 
 Nous montrons ci-dessous, les différentes interfaces graphiques auxquelles le joueur aura à manipuler.
 

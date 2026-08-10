@@ -38,7 +38,7 @@ data: {"counter":2,"state":"PRE_GAME"}
 
 La fréquence de rafraichissement est fixée à 500 ms. Vous remarquerez une structure qui retourne un ensemble de données : `event` un nom, `id` un identifiant, `retry` le temps avant une tentative de reconnexion du client vers le serveur, `data` la charge utile (_payload_) transmis vers le client. C'est cette dernière information qui servira au client pour mettre à jour l'écran de mise en attente d'une nouvelle manche. Nous sommes donc prêts à développer le code client.
 
-- Ouvrir le projet _spellwhatroyal-swingclient_ et commencer par éditer le fichier _pom.xml_ pour ajouter le module `SseEventSource` de JAX-RS afin de prendre en compte les communications Server-Sent Event.
+- Ouvrir le projet _spellwhatroyal-tambouiclient_ et commencer par éditer le fichier _pom.xml_ pour ajouter le module `SseEventSource` de JAX-RS afin de prendre en compte les communications Server-Sent Event.
 
 ```xml
     <dependencies>
@@ -84,7 +84,7 @@ Runnable onComplete = () -> {
 eventSource.open();
 ```
 
-- Depuis le projet _spellwhatroyal-swingclient_, compléter la méthode `SpellWhatRoyalController#createSseEventSource()` en respectant l'algorithme suivant :
+- Depuis le projet _spellwhatroyal-tambouiclient_, compléter la méthode `SpellWhatRoyalController#createSseEventSource()` en respectant l'algorithme suivant :
 
   - créer un objet `WebTarget` en utilisant les mêmes paramètres que dans l'exemple avec **cURL** ;
   - créer un objet `SseEventSource` à partir de l'objet `WebTarget` précédement construit ;
@@ -96,4 +96,6 @@ eventSource.open();
 
 - Compléter la méthode `SpellWhatRoyalController#preGame(GameData)` afin de mettre à jour les différents éléments de l'écran de mise en attente. La méthode `SpellWhatRoyalController#showWaitingServerUI()` est utilisée pour afficher l'écran de mise en attente.
 
-- Tester le projet client _spellwhatroyal-swingclient_ à partir de la procédure décrite dans l'exercice 2.
+- Tester le projet client _spellwhatroyal-tambouiclient_ à partir de la procédure décrite dans l'exercice 2.
+
+- Compléter la méthode `SpellWhatRoyalController#inGame(GameData readData)` afin de mettre à jour les différents éléments de l'écran de jeu. Vous devez invoquer les méthodes suivantes `SpellWhatRoyalUI#setGameUIImage`, `SpellWhatRoyalUI#setResultUISolution`, `SpellWhatRoyalUI#setResultUIScore` et `SpellWhatRoyalController#initPostGameForCurrentPlayer`. La méthode `SpellWhatRoyalController#showResultUI()` est utilisée pour afficher l'écran de jeu.

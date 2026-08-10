@@ -16,9 +16,9 @@ La partie serveur de cette communication est déjà implémentée.
 - Ouvrir le dossier du projet Maven **spellwhatroyal** disponible dans le répertoire _workspace_.
 
 - Examiner les différents sous-dossiers du projet « Spell What Royal »
-  - _spellwhatroyal-server_ projet pour la partie serveur développé en Java ;
-  - _spellwhatroyal-swingclient_ projet pour la partie cliente développé en Java et Swing ;
-  - _spellwhatroyal-api_ projet commun à tous les projets Java.
+  - _spellwhatroyal-server_ projet pour la partie serveur, développé en Java ;
+  - _spellwhatroyal-tambouiclient_ projet pour la partie cliente, développé en Java et [Tamboui](https://tamboui.dev/) ;
+  - _spellwhatroyal-api_ projet commun à l'ensemble des projets Java.
 
 Nous allons démarrer le serveur pour tester la future communication en démarrant un serveur d'applications Java depuis le projet Maven **spellwhatroyal-server** (sous projet de **spellwhatroyal**).
 
@@ -85,7 +85,7 @@ Toutes les fonctions ont été vérifiées.
 
 - Ouvrir un terminal et exécuter la commande suivante en utilisant **cURL** pour rejoindre une partie de « Spell What Royal » et identifier le joueur _J1_ sur le serveur.
 
-```console
+```bash
 curl -H "Content-Type: application/json" -X POST -d '{"username":"J1"}' http://localhost:9080/authentication
 ```
 
@@ -128,7 +128,7 @@ BookResult readEntity = post.readEntity(BookResult.class); // Extraction de l'ob
 Response response = ClientBuilder.newClient().target("http://127.0.0.1:9992").path("/books/queryparameters").request().post(Entity.entity(myBook, MediaType.APPLICATION_JSON_TYPE));
 ```
 
-- Depuis le projet _spellwhatroyal-swingclient_ compléter la méthode `SpellWhatRoyalController#createPlayer(String value)` en respectant l'algorithme suivant :
+- Depuis le projet _spellwhatroyal-tambouiclient_ compléter la méthode `SpellWhatRoyalController#createPlayer(String value)` en respectant l'algorithme suivant :
 
   - créer un objet `Credentials` à partir du nom saisi sur l'écran de connexion ;
   - invoquer le service web ;
@@ -139,4 +139,4 @@ Response response = ClientBuilder.newClient().target("http://127.0.0.1:9992").pa
   - sinon :
     - afficher un message d'erreur sur la console.
 
-- Depuis le projet _spellwhatroyal-swingclient_, tester votre code en exécutant la classe principale `fr.mickaelbaron.spellwhatroyal.swingclient.controller.SpellWhatRoyalController`.
+- Depuis le projet _spellwhatroyal-tambouiclient_, tester votre code en exécutant la classe principale `fr.mickaelbaron.spellwhatroyal.tambouiclient.controller.SpellWhatRoyalController`.
