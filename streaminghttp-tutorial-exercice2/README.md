@@ -22,10 +22,10 @@ La partie serveur de cette communication est déjà implémentée.
 
 Nous allons démarrer le serveur pour tester la future communication en démarrant un serveur d'applications Java depuis le projet Maven **spellwhatroyal-server** (sous projet de **spellwhatroyal**).
 
-- Comme le projet Maven **spellwhatroyal-server** a une dépendance vers le projet Maven **spellwhatroyal-api**, construire et installer dans le dépôt local Maven ce projet API. Se placer dans le dossier _spellwhatroyal-api_ et exécuter la commande Maven suivante :
+- Comme le projet Maven **spellwhatroyal-server** a une dépendance vers le projet Maven **spellwhatroyal-api**, construire et installer dans le dépôt local Maven tous les projets. Se placer à la racine du dossier _spellwhatroyal_ et exécuter la commande Maven suivante :
 
 ```bash
-cd spellwhatroyal-api
+cd streaminghttp-tutorial/workspace/spellwhatroyal
 mvn clean install
 ```
 
@@ -33,17 +33,19 @@ La sortie console attendue :
 
 ```bash
 ...
-[INFO] --- jar:3.4.1:jar (default-jar) @ spellwhatroyal-api ---
-[INFO] Building jar: /Users/baronm/workspacepersowebserviceslabs/streaminghttp-tutorial-solution/workspace/spellwhatroyal/spellwhatroyal-api/target/spellwhatroyal-api-0.1-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for spellwhatroyal-parent 0.1-SNAPSHOT:
 [INFO]
-[INFO] --- install:3.1.2:install (default-install) @ spellwhatroyal-api ---
-[INFO] Installing /Users/baronm/workspacepersowebserviceslabs/streaminghttp-tutorial-solution/workspace/spellwhatroyal/spellwhatroyal-api/pom.xml to /Users/baronm/.m2/repository/fr/mickaelbaron/spellwhatroyal-api/0.1-SNAPSHOT/spellwhatroyal-api-0.1-SNAPSHOT.pom
-[INFO] Installing /Users/baronm/workspacepersowebserviceslabs/streaminghttp-tutorial-solution/workspace/spellwhatroyal/spellwhatroyal-api/target/spellwhatroyal-api-0.1-SNAPSHOT.jar to /Users/baronm/.m2/repository/fr/mickaelbaron/spellwhatroyal-api/0.1-SNAPSHOT/spellwhatroyal-api-0.1-SNAPSHOT.jar
+[INFO] spellwhatroyal-parent .............................. SUCCESS [  0.094 s]
+[INFO] spellwhatroyal-api ................................. SUCCESS [  0.491 s]
+[INFO] spellwhatroyal-server .............................. SUCCESS [  0.350 s]
+[INFO] spellwhatroyal-swingclient ......................... SUCCESS [  0.153 s]
+[INFO] spellwhatroyal-tambouiclient ....................... SUCCESS [  0.112 s]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.964 s
-[INFO] Finished at: 2025-03-16T11:55:52+01:00
+[INFO] Total time:  1.247 s
+[INFO] Finished at: 2026-11-04T10:38:52+01:00
 [INFO] ------------------------------------------------------------------------
 ```
 

@@ -7,8 +7,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
-import org.glassfish.tyrus.client.ClientManager;
-
 import fr.mickaelbaron.spellwhatroyal.api.DataResultDecoder;
 import fr.mickaelbaron.spellwhatroyal.api.NotYetImplementException;
 import fr.mickaelbaron.spellwhatroyal.api.PlayerDataEncoderDecoder;
@@ -20,8 +18,6 @@ import fr.mickaelbaron.spellwhatroyal.api.model.GameData;
 import fr.mickaelbaron.spellwhatroyal.api.model.PlayerData;
 import fr.mickaelbaron.spellwhatroyal.api.model.PlayerDataResult;
 import fr.mickaelbaron.spellwhatroyal.api.model.PlayerResultData;
-import fr.mickaelbaron.spellwhatroyal.swingclient.controller.IResultController;
-import fr.mickaelbaron.spellwhatroyal.swingclient.controller.IWaitingServerController;
 import fr.mickaelbaron.spellwhatroyal.tambouiclient.model.GameModel;
 import fr.mickaelbaron.spellwhatroyal.tambouiclient.ui.SpellWhatRoyalUI;
 import jakarta.websocket.ClientEndpointConfig;
